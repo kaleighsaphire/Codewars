@@ -1,36 +1,33 @@
-// Consider an array/list of sheep where some sheep may be missing
-//  from their place. We need a function that counts the number of 
-//  sheep present in the array (true means present).
+// If you can't sleep, just count sheep!!
 
-// For example,
+// Task:
+// Given a non-negative integer, 3 for example, 
+// return a string with a murmur: "1 sheep...2 sheep...3 sheep...". 
+// Input will always be valid, i.e. no negative integers.
 
-// [true,  true,  true,  false,
-//   true,  true,  true,  true ,
-//   true,  false, true,  false,
-//   true,  false, false, true ,
-//   true,  true,  true,  true ,
-//   false, false, true,  true]
-// The correct answer would be 17.
+// function countSheep(num){
+//     if (num > 0){
+//      let x = 1
+//      do { 
+//         return num.toString() + ' sheep...'
+//         x++;
+//      }
+//      while (x <= num)
+//    }else{
+//      return ''
+//    }
+//   }
+  // returns 1 iteration
 
-// Hint: Don't forget to check for bad values like null/undefined
+  function countSheep(num){
+      let string = ''
+      for(let i = 1; i <= num; i++){
+          string+= `${i} sheep...`
+      }
+      return string;
+  }
 
-function countSheeps(arrayOfSheep) {
-const counter = arrayOfSheep.filter(sheep => sheep)
-return counter.length
-}
+//   Alt 
+//   const countSheep = num =>
+//   num ? countSheep(num - 1) + num + ' sheep...' : ''
 
-// Alt 
-// function countSheeps(arrayOfSheeps) {
-//     return arrayOfSheeps.filter(Boolean).length;
-// }
-
-// function countSheeps(arrayOfSheep) {
-//     // TODO May the force be with you
-//     var num = 0;
-    
-//     for(var i = 0; i < arrayOfSheep.length; i++)
-//       if(arrayOfSheep[i] == true)
-//         num++;
-        
-//     return num;
-// }
