@@ -25,19 +25,25 @@
 /*
 Parameters: given an array of numbers
 Return: true or false depending on whether each number in the array has another number that is +/- 1
-Pseudo Code: sort array, if n - 1 != array[n-1], move to next number in array
+Pseudo Code: check if arr is empty, loop through, for each loop check against plus or minus one elements,
  */
 
 function isNice(arr){
-    arr = arr.sort()
-    for (let i=0; i < arr.length; i++){
-
-        for (j=0; j < arr.length; j++){
-        
+    let result = 0
+    let length = arr.length
+    if (arr[0] != undefined){
+    for (let i =0; i < length; i++){
+        for (let j=0; j < length; j++){
+            if (arr[j] == arr[i] +1 || arr[j] == arr[i] -1){
+                result++
+                break;
+            }    
+         }
     }
-  }
+        return result == length
+    }else{
+        return false;
+    }
+}
 
-  function isNice(arr){
-    return arr.sort().forEach(e => e == e+1 || e-1 ? true : false)
-  }
-
+const isNice = arr =>arr.length != 0 ? arr.every(e => arr.some(f => e == f +1 || e == f -1)) : false;
