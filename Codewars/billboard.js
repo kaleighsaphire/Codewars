@@ -15,3 +15,19 @@ Pseudo Code: name length divided by 1 divided by price
 function billboard(name, price = 30){
     return name.length/(1/price)
 } 
+
+
+function billboard(name, price = 30){
+
+    var totalCost = 0;
+    for(i=0; i<name.length; i++){
+        totalCost += price;
+    } 
+    
+    return totalCost;
+    
+    }
+
+    function billboard(name, price = 30) {
+        return name.split('').reduce((sum, letter) => sum + price, 0); 
+      }
