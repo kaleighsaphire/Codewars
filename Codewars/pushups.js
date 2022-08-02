@@ -13,12 +13,33 @@ Pseudo Code: 10 katas per 60 minutes, 6 mins per kata, time minus (6*kata) equal
  */
 
 function alexMistakes(numberOfKata, timeLimit){
-   const time = timeLimit - (numberOfKata*6)
+   let time = timeLimit - (numberOfKata*6)
    let mistakes = 0
    let mistakeTime = 5
-   while(time >= mistakeTime){
+   while(time - mistakeTime >= 0){
     mistakes = mistakes +1
+    time = time - mistakeTime
     mistakeTime = mistakeTime*2
    }
-   return Math.abs(mistakes); 
+   return mistakes; 
 }
+
+// alt
+
+function alexMistakes(numberOfKata, timeLimit){  
+    return Math.floor(Math.log2((timeLimit - 6 * numberOfKata) / 5 + 1))
+  }
+  
+
+  function alexMistakes(n, t){
+    let count = 0
+    let start = 5
+    let time = (t - n * 6)
+    while (time - start >= 0) {
+      count++
+      time -= start
+      start *= 2
+    }
+    return count
+  }
+  
