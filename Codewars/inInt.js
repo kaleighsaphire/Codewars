@@ -14,5 +14,11 @@
 // isDigit("zero")
 
 function isDigit(s) {
-    return isNan(s)
+    return !isNan(s)
   }
+
+  function isDigit(s) {
+    return s==parseFloat(s);
+   }
+
+   const isDigit = s => s == parseFloat(s)
