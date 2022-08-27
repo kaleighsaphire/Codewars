@@ -14,20 +14,6 @@ function solution(pairs){
   // TODO: complete
 }
 
-function solution(pairs){
-    return Object.keys(pairs)
-      .map(function(k) { return k + ' = ' + pairs[k] })
-      .join(',');
-  }
-
-  function solution(pairs){
-    var array = [];
-    for (var pair in pairs){
-      array.push((pair+' = '+pairs[pair]));
-    }
-    return array.join(',');
-  }
-
   const solution = pairs =>
     Object.entries(pairs)
         .map(([key, value]) => `${key} = ${value}`)
