@@ -13,7 +13,7 @@ Example: ([1, 2, 2, 3], [1, 2, 3]) => 2
 Pseudo Code: sort both array, compare he indexes and find
 first element that is not equal
 */
-Find the missing element between two arrays
+
 function findMissing(arr1, arr2) {
     arr1 = arr1.sort((a,b)=> a-b)
     arr2 = arr2.sort((a,b)=> a-b)
