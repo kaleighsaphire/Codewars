@@ -23,7 +23,7 @@ array slice[element] reduce, push element to new array
 const arrayLeaders = numbers => {
     const leaders = []
     for(let i = 0; i < numbers.length; i++){
-     if(numbers[i] > numbers.slice(i+1).reduce((a,b) =>a +b, 0)) arr.push(numbers[i]) 
+     if(numbers[i] > numbers.slice(i+1).reduce((a,b) =>a +b, 0)) leaders.push(numbers[i]) 
     }
      return leaders
    }
