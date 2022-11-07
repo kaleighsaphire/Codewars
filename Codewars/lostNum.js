@@ -32,3 +32,12 @@ function findDeletedNumber(arr, mixArr) {
         }
     }
 }
+// filter every num that exists in mixed array
+// return arr.filter(n => mixArr.indexOf(n) === -1)[0] || 0
+function findDeletedNumber(arr, mixArr) {
+    if (arr.length === mixArr.length) {
+        return 0
+    } else {
+        return arr.reduce((a, b) => a + b, 0) - mixArr.reduce((a, b) => a + b, 0)
+    }
+}
