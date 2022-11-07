@@ -19,12 +19,15 @@ return 0 else loop mixarr and return index+1 != e
 */
 
 function findDeletedNumber(arr, mixArr) {
-    if (arr.length == mixArr.length || arr.length < 1) {
+    mixArr = mixArr.sort()
+    if (arr.length == mixArr.length) {
         return 0
     } else {
-        for (let i = arr[0]; i < mixArr.length; i++) {
-            if (i + 1 != mixArr.sort()[i]) {
-                return i + 1
+        for (let i = 0; i < mixArr.length; i++) {
+            if (arr[0] !== mixArr[0]) {
+                return 1
+            } else if (arr[i] != mixArr[i]) {
+                return arr[i]
             }
         }
     }
