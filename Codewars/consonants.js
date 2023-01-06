@@ -19,6 +19,7 @@ function consonantCount(str) {
     str = str.toLowerCase()
     let regex = /[bcdfghjklmnpqrstvwxyz]/gi
     let consonants = str.match(regex)
+
     return consonants ? consonants.length : 0;
 }
 
